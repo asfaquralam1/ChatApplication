@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".StartActivity">
     
@@ -39,21 +39,9 @@
 
     </com.google.android.material.appbar.AppBarLayout>
     
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tab_layout"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_userList"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        app:tabSelectedTextColor="@color/colorPrimaryDark"
-        app:tabIndicator="@color/colorPrimaryDark"
-        app:tabTextColor="@color/colorPrimaryDark" />
-    
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/view_pager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-
-        />
-
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

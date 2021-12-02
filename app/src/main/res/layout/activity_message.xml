@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MessageActivity">
+
+    <RelativeLayout
+        android:id="@+id/message_section"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBar_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:gravity="center_vertical"
+                android:id="@+id/toolbar_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                <RelativeLayout
+                    android:id="@+id/users_item_message"
+                    android:paddingTop="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?selectableItemBackground"
+                    android:paddingBottom="8dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profile_picture_message"
+                        android:layout_width="45dp"
+                        android:src="@drawable/ic_launcher_background"
+                        android:layout_marginStart="2dp"
+                        android:scaleType="centerCrop"
+                        android:layout_height="45dp"/>
+
+                    <LinearLayout
+                        android:layout_toEndOf="@+id/profile_picture_message"
+                        android:layout_marginStart="5dp"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical"
+                        android:gravity="center_vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:paddingStart="10dp"
+                            android:paddingEnd="1dp"
+                            android:id="@+id/name_message"
+                            android:maxLength="15"
+                            android:textColor="@color/white"
+                            android:paddingTop="2dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/status_message"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="1dp"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:paddingBottom="2dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+            <ProgressBar
+                android:id="@+id/progressbar_message"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:visibility="gone"
+                android:indeterminate="false"
+                android:layout_marginTop="-7dp"
+                android:layout_marginBottom="-7dp"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_message"
+            android:layout_below="@+id/appBar_message"
+            android:layout_above="@+id/message_layout"
+            android:layout_marginBottom="5dp"
+            android:paddingBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <RelativeLayout
+            android:id="@+id/message_layout"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edit_text_message"
+                android:layout_toStartOf="@+id/send_button_message"
+                android:padding="10dp"
+                android:maxHeight="100dp"
+                android:scrollHorizontally="false"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="Autofill,TextFields" />
+
+
+            <ImageView
+                android:id="@+id/send_button_message"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="2dp"
+                android:padding="2dp"
+                android:src="@drawable/ic_baseline_send_24"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                tools:ignore="ContentDescription" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
